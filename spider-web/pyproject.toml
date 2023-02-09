@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "spider-web"
+version = "0.1.0"
+description = ""
+authors = ["Ronald Perdigão <git.ronaldseabra@gmail.com>"]
+readme = "README.md"
+packages = [{include = "spider_web"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.1.6"
+autopep8 = "^2.0.1"
+djangorestframework = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

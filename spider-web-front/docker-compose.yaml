@@ -1,0 +1,12 @@
+services:
+  spider_front:
+    image: spider_front
+    build:
+      context: .
+    environment:
+      - PORT=3000
+    ports:
+      - "3001:3000"
+    volumes:
+      - .:/app
+    command: "npm run serve"

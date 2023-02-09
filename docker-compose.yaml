@@ -1,0 +1,42 @@
+services:
+
+  # Postgresql
+  postgres_sw:
+    image: postgis/postgis:11-3.2
+    command: ["postgres", "-c", "log_statement=all"]
+    environment:
+      POSTGRES_USER: spider-web
+      POSTGRES_PASSWORD: spider-web
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Django
+  spider_web:
+    image: spider_web
+    build:
+      context: ./spider-web
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./spider-web:/app
+    depends_on:
+      - postgres_sw
+    command: "python manage.py runserver 0.0.0.0:8000"
+
+  # Front - vuejs
+  spider_front:
+    image: spider_front
+    build:
+      context: ./spider-web-front
+    environment:
+      - PORT=3000
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./spider-web-front:/app
+    command: "npm run serve"
+
+volumes:
+  postgres_data:
