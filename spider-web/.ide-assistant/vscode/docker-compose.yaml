@@ -1,0 +1,29 @@
+services:
+
+  # Postgresql
+  postgres_sw:
+    image: postgis/postgis:11-3.2
+    command: ["postgres", "-c", "log_statement=all"]
+    environment:
+      POSTGRES_USER: spider-web
+      POSTGRES_PASSWORD: spider-web
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Django
+  spider_web:
+    image: spider_web
+    build:
+      context: .
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres_sw
+    command: "python manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  postgres_data:

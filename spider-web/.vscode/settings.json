@@ -1,0 +1,12 @@
+{
+  "python.formatting.autopep8Path": "/home/ronaldseabra/ESTUDOS/TCC/spider-web/.venv/bin/autopep8",
+  "python.formatting.autopep8Args": [
+    "--max-line-length",
+    "126",
+    "--experimental",
+    "--agressive"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "python.analysis.typeCheckingMode": "basic"
+}
