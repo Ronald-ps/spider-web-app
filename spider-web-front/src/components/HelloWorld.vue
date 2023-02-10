@@ -32,10 +32,15 @@
 </template>
 
 <script>
+import teste from '../../apis/spider_web/teste'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created() {
+    teste.get()
+    t.get
   }
 }
 </script>
