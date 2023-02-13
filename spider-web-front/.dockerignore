@@ -1,8 +1,0 @@
-
-# GERAIS
-Dockerfile
-.gitignore
-node_modules/
-pm2err*.log
-build-front/
-README.MD
