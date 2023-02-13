@@ -136,7 +136,8 @@ CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 
 # External apps config
+CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-  "http://127.0.0.1:3001","http://localhost:3001"
+  "http://127.0.0.1:3001","http://localhost:3001",
 )

@@ -5,7 +5,6 @@
       "type": "docker",
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
-      "port": 8001,
       "python": {
         "pathMappings": [
           {
@@ -31,6 +30,22 @@
           }
         ],
         "django": true,
-    }
+    },
+    {
+    "name": "Django runserver",
+    "type": "python",
+    "request": "launch",
+    "program": "${workspaceFolder}/manage.py",
+    "args": [
+        "runserver",
+        "8001",
+    ],
+    "env": {
+        "DJANGO_SETTINGS_MODULE": "spider_web.settings",
+    },
+    "python": "/home/ronaldseabra/ESTUDOS/TCC/spider-web-app/spider-web/.venv/bin/python3",
+    "django": true,
+    "justMyCode": true
+  }
   ]
 }
