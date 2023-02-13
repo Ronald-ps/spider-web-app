@@ -1,9 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted} from 'vue'
+import  teste  from '#/spider-back/teste1.js'
 
 defineProps({
   msg: String,
 })
+
+onMounted(() => {
+  console.log("olá")
+  _helloWord()
+})
+
+const _helloWord = async function () {
+  const msg = await teste.helloWord()
+  console.log(msg)
+}
+
 
 const count = ref(0)
 </script>
