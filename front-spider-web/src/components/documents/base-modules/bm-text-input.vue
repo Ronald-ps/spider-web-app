@@ -1,3 +1,1 @@
-<template>
-  Olá pessoas
-</template>
+<template>Olá pessoas</template>
