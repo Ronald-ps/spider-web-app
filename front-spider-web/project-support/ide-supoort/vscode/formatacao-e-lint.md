@@ -1,6 +1,6 @@
 # Formatação e lint
 
-## O que o projeto usa
+## Sobre o projeto
 
 Esse projeto usa Prettier como formatador e EsLint como lint.
 
@@ -10,7 +10,7 @@ Os arquivos de configuração são .eslintrc.js e .prettierrc.json, sendo que no
 
 ### Extensões
 
-Para formatação e lint desse projeto são recomendadas as extensões Prettier, e a extensão EsLint, a primeira é um formatador automático e segunda aponta erros de lint.
+Para formatação e lint desse projeto são recomendadas as extensões *Prettier*, e a extensão *EsLint*, a primeira é um formatador automático e segunda aponta erros de lint.
 
 ### configurações
 
