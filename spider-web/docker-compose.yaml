@@ -1,14 +1,17 @@
+version: '3'
+
 services:
 
   # Postgresql
   postgres_sw:
     image: postgis/postgis:11-3.2
-    command: ["postgres", "-c", "log_statement=all"]
+    env_file:
+      - .env.db
     environment:
-      POSTGRES_USER: spider-web
-      POSTGRES_PASSWORD: spider-web
+      POSTGRES_PASSWORD: spider_web
+
     ports:
-      - "5433:5432"
+      - 5477:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

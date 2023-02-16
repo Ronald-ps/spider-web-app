@@ -18,7 +18,7 @@ RUN apt-get update \
 RUN python3 -m pip install --upgrade pip
 RUN pip install poetry==1.3.1
 ENV POETRY_VIRTUALENVS_CREATE=false
-RUN poetry install -n --no-ansi --no-root
+RUN poetry install -n --no-ansi
 
 # expondo a porta do django
 EXPOSE 8000
