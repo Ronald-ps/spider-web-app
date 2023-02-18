@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  vuejs:
+    image: vuejs
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - .:/front
+    ports:
+      - ${VUEJS_PORT}:3000
+    command: "npm run dev -- --port 3000 --host 0.0.0.0"

@@ -1,6 +1,7 @@
 # customizado
 vite.config.js
 .vscode/
+.eslintrc.**
 
 # gitignore conteúdo
 #################################################
