@@ -1,0 +1,9 @@
+node_modules
+project-development
+project-support
+.gitignore
+README.md
+.env
+.dockerignore
+.dockercompose.yaml
+.md
