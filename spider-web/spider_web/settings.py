@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     # my apps
-    "core"
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -48,7 +48,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
 ]
 
 ROOT_URLCONF = "spider_web.urls"
@@ -76,13 +75,13 @@ WSGI_APPLICATION = "spider_web.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': getenv("POSTGRES_DB", "spider_web"),
-        'USER': getenv("POSTGRES_USER", "spider_web"),
-        'PASSWORD': getenv("POSTGRES_PASSWORD", "spider_web"),
-        'HOST': getenv("POSTGRES_HOST","localhost"),
-        'PORT': getenv("POSTGRES_PORT", "5477"),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": getenv("POSTGRES_DB", "spider_web"),
+        "USER": getenv("POSTGRES_USER", "spider_web"),
+        "PASSWORD": getenv("POSTGRES_PASSWORD", "spider_web"),
+        "HOST": getenv("POSTGRES_HOST", "localhost"),
+        "PORT": getenv("POSTGRES_PORT", "5477"),
     }
 }
 
@@ -129,12 +128,13 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # requests config
-CSRF_COOKIE_NAME = 'XSRF-TOKEN'
-CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
+CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
 
 # External apps config
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-  "http://127.0.0.1:3001","http://localhost:3001",
+    "http://127.0.0.1:3001",
+    "http://localhost:3001",
 )
