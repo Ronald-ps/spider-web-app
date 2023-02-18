@@ -1,7 +1,6 @@
 # customizado
 vite.config.js
 .vscode/
-.eslintrc.**
 tailwind.config.cjs
 postcss.config.cjsgts
 
