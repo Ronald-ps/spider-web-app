@@ -5,7 +5,7 @@
       "type": "docker",
       "request": "launch",
       "preLaunchTask": "docker-run: debug",
-      "port": 8001,
+      "port": 8999,
       "python": {
         "pathMappings": [
           {
@@ -20,7 +20,7 @@
       "name": "Attach Docker Django",
       "type": "python",
       "request": "attach",
-      "port": 8001,
+      "port": 8999,
       "python": {
         "pathMappings": [
           {

@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 from os import getenv
 
-load_dotenv(".env.db")  # carrega as variáveis de ambiente do arquivo .env
+load_dotenv(".env")  # carrega as variáveis de ambiente do arquivo .env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

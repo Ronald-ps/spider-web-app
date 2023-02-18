@@ -1,12 +1,20 @@
 # ESPECÍFICOS
-./FRONTEND
+**/.ide-assistant
+**/./FRONTEND
+**/docker/volumes
+**/.docker/volumes
+**/.vscode
+**/project-supporte
+db.sqlite3**
+
+
+
 
 # GERAIS
 **/__pycache__
 **/.venv
 **/.classpath
 **/.dockerignore
-**/.env
 **/.git
 **/.gitignore
 **/.project

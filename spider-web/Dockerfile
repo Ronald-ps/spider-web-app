@@ -1,9 +1,9 @@
-FROM python:3.11-slim
+FROM python:3.11.0
 
 WORKDIR /app
 
-# já copio tudo de uma vez só porque a aplicação é pequena
-COPY . .
+# copio o pyproject para instalação de dependências
+COPY pyproject.toml poetry.lock ./
 
 # Evita de usar o sistema legado e instala dependências necessárias
 RUN apt-get update \
@@ -16,9 +16,12 @@ RUN apt-get update \
 
 # instalação de dependencias python
 RUN python3 -m pip install --upgrade pip
-RUN pip install poetry==1.3.1
+RUN pip install poetry==1.3.2
 ENV POETRY_VIRTUALENVS_CREATE=false
-RUN poetry install -n --no-ansi
+RUN poetry install -n --no-ansi --no-interaction --no-cache --verbose --no-root
+
+# Resto do projeto, menos o que está em dockerignore
+COPY . .
 
 # expondo a porta do django
 EXPOSE 8000

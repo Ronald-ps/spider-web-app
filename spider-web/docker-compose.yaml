@@ -3,29 +3,29 @@ version: '3'
 services:
 
   # Postgresql
-  postgres_sw:
-    image: postgis/postgis:11-3.2
+  postgres:
+    image: postgres
     env_file:
-      - .env.db
-    environment:
-      POSTGRES_PASSWORD: spider_web
-
+      # POSTGRES_PORT não é uma variável lida pelo container
+      - .env
     ports:
-      - 5477:5432
+      - ${POSTGRES_PORT}:5432
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./.docker/volumes/postgres/:/var/lib/postgresql/data
 
   # Django
-  spider_web:
+  django:
     image: spider_web
     build:
       context: .
     ports:
-      - "8001:8000"
+      - "${DJANGO_PORT}:8000"
     volumes:
       - .:/app
+    env_file:
+      - .env
     depends_on:
-      - postgres_sw
+      - postgres
     command: "python manage.py runserver 0.0.0.0:8000"
 
 volumes:
