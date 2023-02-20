@@ -12,5 +12,13 @@ class ExternalFileSnippet(models.Model):
 
 
 class Document(models.Model):
-    """ Documento criado por esse projeto """
+    """Documento criado por esse projeto"""
+
     pass
+
+
+class ExternalFileSnippetAssociatedDocument(models.Model):
+    """Associação entre arquivos externos e documentos"""
+
+    external_file_snippet = models.ForeignKey(to=ExternalFileSnippet, on_delete=models.CASCADE, null=False, blank=False)
+    document = models.ForeignKey(to=Document, on_delete=models.CASCADE, null=False, blank=False)
