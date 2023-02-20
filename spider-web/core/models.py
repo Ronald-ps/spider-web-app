@@ -9,3 +9,8 @@ class ExternalFileSnippet(models.Model):
     first_line = models.IntegerField(null=False, blank=False)
     last_line = models.IntegerField(null=False, blank=False)
     path = models.TextField(null=False, blank=False)
+
+
+class Document(models.Model):
+    """ Documento criado por esse projeto """
+    pass
