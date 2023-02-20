@@ -26,5 +26,5 @@ COPY . .
 # expondo a porta do django
 EXPOSE 8000
 
-# execuções quando o container inicia
-CMD ["./docker/commands/pre_start.sh"]
+# execuções quando o container inicia. Ele procura a pasta dentro do host, nao dentro do container
+CMD ["./.docker/commands/pre_start.sh"]

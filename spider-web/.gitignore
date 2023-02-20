@@ -1,8 +1,10 @@
 # específicos
 **/.docker/volumes
+**/docker/volumes
 **/.vscode
 .env.db
 .env
+
 
 
 # Django #
