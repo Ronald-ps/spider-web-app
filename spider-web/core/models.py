@@ -16,7 +16,9 @@ class ExternalFileSnippet(models.Model):
 class Document(models.Model):
     """Documento criado por esse projeto"""
 
-    pass
+    name = models.TextField(**NO_EMPTY)
+    path = models.TextField(**NO_EMPTY)
+
 
 
 class ExternalFileSnippetAssociatedDocument(models.Model):
