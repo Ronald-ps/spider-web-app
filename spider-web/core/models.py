@@ -20,7 +20,6 @@ class Document(models.Model):
     path = models.TextField(**NO_EMPTY)
 
 
-
 class ExternalFileSnippetAssociatedDocument(models.Model):
     """Associação entre arquivos externos e documentos"""
 

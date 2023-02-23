@@ -1,5 +1,11 @@
-from django.urls import path
+from django.urls import include, path
+from rest_framework import routers
 
-from core import views
+from core import views, viewsets
 
-urlpatterns = [path("", views.hello)]
+router = routers.DefaultRouter()
+router.register(r"documents", viewsets.DocumentViewSet)
+#  isso deve ficar acima de urlpatterns
+
+
+urlpatterns = [path("hello/", views.hello), path("", include(router.urls))]

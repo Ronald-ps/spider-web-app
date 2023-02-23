@@ -139,3 +139,7 @@ CORS_ORIGIN_WHITELIST = (
     "http://127.0.0.1:3001",
     "http://localhost:3001",
 )
+
+
+# REST FRAMEWORK
+REST_FRAMEWORK = {"DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination", "PAGE_SIZE": 10}
