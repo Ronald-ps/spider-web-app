@@ -6,4 +6,4 @@ from core.models import Document
 class DocumentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Document
-        fields = ["name", "path"]
+        fields = ["name", "path", "inserted_at"]
