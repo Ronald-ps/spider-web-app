@@ -21,6 +21,14 @@ class Document(models.Model):
     inserted_at = models.DateTimeField(**NO_EMPTY)
 
 
+class ExternalDocument(models.Model):
+    """Documento externo associado à esse projeto"""
+
+    name = models.TextField(**NO_EMPTY)
+    path = models.TextField(**NO_EMPTY)
+    inserted_at = models.DateTimeField(**NO_EMPTY)
+
+
 class ExternalFileSnippetAssociatedDocument(models.Model):
     """Associação entre arquivos externos e documentos"""
 
