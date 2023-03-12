@@ -18,7 +18,7 @@ class Document(models.Model):
 
     name = models.TextField(**NO_EMPTY)
     path = models.TextField(**NO_EMPTY)
-
+    inserted_at = models.DateTimeField(**NO_EMPTY)
 
 
 class ExternalFileSnippetAssociatedDocument(models.Model):
