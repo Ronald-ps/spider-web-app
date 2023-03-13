@@ -34,3 +34,20 @@ class ExternalFileSnippetAssociatedDocument(models.Model):
 
     external_file_snippet = models.ForeignKey(to=ExternalFileSnippet, on_delete=models.CASCADE, **NO_EMPTY)
     document = models.ForeignKey(to=Document, on_delete=models.CASCADE, **NO_EMPTY)
+
+
+class Tag(models.Model):
+    """Modelo que representa tags, como 'multa', 'rh' e etc."""
+
+    name = models.TextField(**NO_EMPTY)
+
+
+class ExternalDocument_Tag(models.Model):
+    """Modelo intermediário entre documentos externos (um documento do google docs, por exemplo)
+    e tgs (como multa, pagamento, melhoria)"""
+
+    tag = models.ForeignKey(ExternalDocument, on_delete=models.CASCADE, **NO_EMPTY)
+    external_document = models.ForeignKey(Tag, on_delete=models.CASCADE, **NO_EMPTY)
+
+    class Meta:
+        unique_together = ("tag", "external_document")
