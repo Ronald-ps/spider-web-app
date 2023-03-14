@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import permissions, viewsets
 
 from core.models import Document, ExternalDocument
@@ -12,6 +13,8 @@ class DocumentViewSet(viewsets.ModelViewSet):
     queryset = Document.objects.all().order_by("-pk")
     serializer_class = DocumentSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["name", "path"]
 
 
 class ExternalDocumentViewSet(viewsets.ModelViewSet):

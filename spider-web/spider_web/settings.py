@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # external apps
     "rest_framework",
+    "django_filters",
     "corsheaders",
     # my apps
     "core",
