@@ -50,8 +50,21 @@ class ExternalDocument(models.Model):
     # Caminho do documento, como um caminho de diretório
     description = models.TextField(null=True, blank=True)
     # Descrição do documento
+    description_search_vector = SearchVectorField(null=True)
+    # Descrição traduzida para um search vector, para que seja fácil fazer pesquisa full text
     inserted_at = models.DateTimeField(auto_now_add=True, **NO_EMPTY)
     # Data em que o documento foi inserido no banco de dados
+
+    def update_description_search_vector(self):
+        """Método utilizado para atualizar o description search vector,
+        implementado afim de que não seja necessário atualizar o search vector em runtime"""
+
+        vector = SearchVector("description")
+        self.description_search_vector = vector
+        self.save(update_fields=["description_search_vector"])
+
+    class Meta:
+        indexes = [GinIndex(fields=["description_search_vector"])]
 
 
 class ExternalFileSnippetAssociatedDocument(models.Model):
