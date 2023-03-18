@@ -13,3 +13,5 @@ Bem vindo ao spider_web, projeto que tem como objetivo servir para unir document
 - O projeto usa poetry como gerenciador de bibliotecas.
 
 - Para rodar o processo django já com o banco de dados, vá ao terminal e rode ```docker compose up```.
+
+- O lint do projeto fica por conta de `black` e `isort`. Portanto, um ```black .;isort .``` no terminal formatará o código para você.

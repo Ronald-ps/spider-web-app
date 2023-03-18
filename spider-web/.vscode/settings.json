@@ -8,5 +8,8 @@
   ],
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
-  "python.analysis.typeCheckingMode": "basic"
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.words": [
+    "linux"
+  ]
 }
