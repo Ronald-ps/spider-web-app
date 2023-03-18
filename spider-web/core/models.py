@@ -21,7 +21,7 @@ class Document(models.Model):
     name = models.TextField(**NO_EMPTY)
     # Nome do document
     path = models.TextField(**NO_EMPTY)
-    # Caminho do documento, como um caminho de arquivo no linux
+    # Caminho do documento, ainda não decidi se é uma url ou o caminho de um diretório
     description = models.TextField(null=True, blank=True)
     # Descrição do documento
     description_search_vector = SearchVectorField(null=True)
@@ -47,7 +47,7 @@ class ExternalDocument(models.Model):
     name = models.TextField(**NO_EMPTY)
     # Nome do documento
     path = models.TextField(**NO_EMPTY)
-    # Caminho do documento, como um caminho de diretório
+    # Caminho do documento, ainda não decidi se é uma url ou o caminho de um diretório
     description = models.TextField(null=True, blank=True)
     # Descrição do documento
     description_search_vector = SearchVectorField(null=True)

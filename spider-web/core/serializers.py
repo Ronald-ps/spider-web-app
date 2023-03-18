@@ -8,7 +8,7 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Document
-        fields = ["name", "path", "inserted_at"]
+        fields = ["name", "path", "inserted_at", "description"]
 
 
 class ExternalDocumentSerializer(serializers.ModelSerializer):
@@ -16,4 +16,4 @@ class ExternalDocumentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ExternalDocument
-        fields = "__all__"
+        fields = ["name", "path", "inserted_at", "description"]
