@@ -18,6 +18,7 @@ class Document(models.Model):
 
     name = models.TextField(**NO_EMPTY)
     path = models.TextField(**NO_EMPTY)
+    description = models.TextField(null=True, blank=True)
     inserted_at = models.DateTimeField(auto_now_add=True, **NO_EMPTY)
 
 
