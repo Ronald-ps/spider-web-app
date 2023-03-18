@@ -146,6 +146,8 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 .history
 */.vscode
+settings.json
+launch.json
 
 # docker
 **/postgres_data
