@@ -45,8 +45,13 @@ class ExternalDocument(models.Model):
     """Documento externo associado à esse projeto"""
 
     name = models.TextField(**NO_EMPTY)
+    # Nome do documento
     path = models.TextField(**NO_EMPTY)
+    # Caminho do documento, como um caminho de diretório
+    description = models.TextField(null=True, blank=True)
+    # Descrição do documento
     inserted_at = models.DateTimeField(auto_now_add=True, **NO_EMPTY)
+    # Data em que o documento foi inserido no banco de dados
 
 
 class ExternalFileSnippetAssociatedDocument(models.Model):
