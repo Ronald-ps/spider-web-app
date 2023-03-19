@@ -89,3 +89,16 @@ class ExternalDocument_Tag(models.Model):
 
     class Meta:
         unique_together = ("tag", "external_document")
+
+
+class QueueToUpdateDescriptionSearchVector(models.Model):
+    """Tabela temporária com os ids que são para atualizar os search vector description,
+    inicialmente, só dos external docs."""
+
+    # A ideia é atualizar essa tabela para que eu consiga atualizar tanto dos external docs
+    # quanto dos docs normais. Isso para evitar um número exagerado de conexões com o banco de dados
+
+    document_id = models.IntegerField(null=False)
+    # Optei por esse cara ser um inteiro, se precisar, depois mudo.
+    # Essa opção foi simplesmente por que não há nenhum motivo especial
+    # Para eu manter uma relação entre ambos
