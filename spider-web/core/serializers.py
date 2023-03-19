@@ -16,4 +16,4 @@ class ExternalDocumentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ExternalDocument
-        fields = ["name", "path", "inserted_at", "description"]
+        fields = ["id", "name", "path", "inserted_at", "description"]

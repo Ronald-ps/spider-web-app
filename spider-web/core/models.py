@@ -59,7 +59,7 @@ class ExternalDocument(models.Model):
         """Método utilizado para atualizar o description search vector,
         implementado afim de que não seja necessário atualizar o search vector em runtime"""
 
-        vector = SearchVector("name") + SearchVector("description")
+        vector = SearchVector("name", config="portuguese") + SearchVector("description", config="portuguese")
         self.description_search_vector = vector
         self.save(update_fields=["description_search_vector"])
 
