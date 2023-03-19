@@ -130,17 +130,18 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # requests config
-CSRF_COOKIE_NAME = "XSRF-TOKEN"
-CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:3999",
+    "http://localhost:3999",
+]
 
 # External apps config
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
+CORS_ALLOWED_ORIGINS = (
     "http://127.0.0.1:3999",
     "http://localhost:3999",
 )
-
 
 # REST FRAMEWORK
 REST_FRAMEWORK = {"DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination", "PAGE_SIZE": 10}
