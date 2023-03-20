@@ -9,4 +9,8 @@ router.register(r"external-documents", viewsets.ExternalDocumentViewSet)
 #  isso deve ficar acima de urlpatterns
 
 
-urlpatterns = [path("hello/", views.hello), path("", include(router.urls))]
+urlpatterns = [
+    path("hello/", views.hello),
+    path("", include(router.urls)),
+    path("search-documents/", views.search_documents),
+]

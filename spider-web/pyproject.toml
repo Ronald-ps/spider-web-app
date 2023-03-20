@@ -43,3 +43,6 @@ exclude = '''
   | project-support
 )/
 '''
+
+[tool.isort]
+profile = "black"

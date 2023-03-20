@@ -17,3 +17,8 @@ class ExternalDocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExternalDocument
         fields = ["id", "name", "path", "inserted_at", "description"]
+
+
+class ExternalDocumentSearchSerializer(serializers.Serializer):
+    search_text = serializers.CharField()
+    max_result_quantity = serializers.IntegerField()

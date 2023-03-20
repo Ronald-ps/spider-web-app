@@ -1,6 +1,6 @@
-from django.contrib.postgres.search import SearchVector
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import permissions, viewsets
+from rest_framework.decorators import action
 
 from core.models import Document, ExternalDocument
 from core.serializers import DocumentSerializer, ExternalDocumentSerializer
